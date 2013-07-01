@@ -6,7 +6,7 @@
 		var contains = function(a, obj) {var i = a.length;while (i--) {if (a[i] === obj) {return true;}}return false;},
 			remove = function(a, x) {
 				if (contains(a,x)) {
-					a.splice(a.indexOf(x));
+					a.splice(a.indexOf(x),1 );
 				}
 			};
 
