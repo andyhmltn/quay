@@ -88,3 +88,8 @@ For anything else, use the character.<br/>
 
 ## License
 MIT License
+
+## Contributors
+andyhmltn - https://github.com/andyhmltn
+Danny Scott - https://github.com/dannyrscott
+Larry Battle - https://github.com/LarryBattle/
