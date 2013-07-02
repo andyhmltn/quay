@@ -16,3 +16,7 @@ You may want that function to run when a key combination is pressed on your page
 	});
 
 And voila! Now that function will be run whenever the user presses CTRL+ALT+A on that page.
+
+License
+-----------
+Please see LICENSE.md
