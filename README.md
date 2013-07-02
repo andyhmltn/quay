@@ -40,7 +40,7 @@ Refer to `demo.html`
 
 <b>Quay.press(object)</b><br/>
 Binds an key press combination to a function call.<br/>
-Pass an object to `Quay.press()`, where the properties names are the key combination, and the value is the function.
+Pass an object to `Quay.press()`, where each property is a key combinations and the value is a function.
 
 	Quay.press({
 		key_combo : function,
