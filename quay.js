@@ -121,10 +121,12 @@
         // on keydown to store pressed key and call the bound key binding.
         addEvent(window.document, "keydown", function (e) {
             if (!pressing[getEventNumber(e)]) {
-                that.log("Adding event number: " + getEventNumber(e));
                 pressing[getEventNumber(e)] = 1;
                 currently_pressing = getKeys(pressing).sort().join(',');
+    			that.log("Adding event number: " + getEventNumber(e));
+				that.log("You're currently pressing: " + currently_pressing);
             }
+			
             if (typeof that.bindings[currently_pressing] === "function") {
                 that.log("Calling function for `" + currently_pressing + "`");
                 that.bindings[currently_pressing]();
