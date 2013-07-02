@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Quay Example</title>
+  <style type="text/css">
+  #logs{
+	width: 30em;
+	height: 20em;
+	overflow: scroll;
+  }
+  </style>
+</head>
+<body>
+	<h2><a href="https://github.com/andyhmltn/quay">Quay Example</a></h2>
+	<p>Press "ctrl + alt + a".</p>
+	<p>Also try pressing 0,1,2,3 at once.</p>
+	<h3>Logs:</h3>
+	<input type="button" value="Clear Logs" id="clearLogs"/><br/>
+	<div id="logs"></div>
+  <script src="quay.js"></script>
+  <script type="text/javascript">
+	(function () {
+		document.getElementById("clearLogs").onclick = function(){
+			document.getElementById("logs").innerHTML = "";
+		};
+		var say_hello = function () {
+			log( "Hello World! It's " + (new Date()).toUTCString() );
+		};
+		var all_numbers = function () {
+			log("Congratulations! You're now a pseudo mathematicians.");
+		};
+		var log = function (str) {
+			var logs = document.getElementById("logs");
+			var el = document.createElement("div");
+			el.innerHTML = str;
+			logs.insertBefore(el, logs.firstChild);
+		};
+		Quay.setLogger(log);
+		Quay.press({
+			'ctrl_alt_a' : say_hello,
+			'0_1_2_3' : all_numbers
+		});
+	}());
+  </script>
+</body>
+</html>
