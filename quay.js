@@ -25,7 +25,6 @@
 		this.convert = function(key) {
 
 			if (contains(Object.keys(special_keys),String(key)))
-			//if(Object.keys(special_keys).contains(String(key)))
 			{
 				return special_keys[key];
 			} else {
