@@ -34,6 +34,8 @@
 		this.run = function(key) {
 			var string = this.convert(key.which);
 			pressing.push(string);
+
+			pressing.sort();
 		};
 
 		this.press = function(key_bindings) { this.bindings = key_bindings; };
@@ -41,7 +43,9 @@
 		window.onkeydown = function(e) {
 			_self.run(e);
 
-			var currently_pressing = pressing.join('_');
+			var sorted_pressing    = pressing.sort();
+			var currently_pressing = sorted_pressing.join('_');
+
 			if (contains(Object.keys(_self.bindings),currently_pressing))
 			{
 				_self.bindings[currently_pressing]();
