@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Quay Example</title>
+  <style type="text/css">
+  #logs{
+  width: 40em;
+	height: 30em;
+  }
+  </style>
+</head>
+<body>
+	<h2><a href="https://github.com/andyhmltn/quay">Quay Example</a></h2>
+	<p>Press "ctrl + alt + a".</p>
+	<h3>Logs:</h3>
+	<textarea id="logs"></textarea>
+  <script src="quay.js"></script>
+  <script type="text/javascript">
+	var say_hello = function() {
+		var str = "Hello World! It's " + (new Date()).toUTCString();
+		log( str );
+	};
+	var log = function(str){
+		var el = document.getElementById("logs");
+		el.innerHTML = str + "\r\n" + el.innerHTML;
+	};
+	Quay.setLogger(log);
+	Quay.press({
+		'ctrl_alt_a':say_hello
+	});
+  </script>
+</body>
+</html>
