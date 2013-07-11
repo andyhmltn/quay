@@ -17,6 +17,15 @@ You may want that function to run when a key combination is pressed on your page
 
 And voila! Now that function will be run whenever the user presses CTRL+ALT+A on that page.
 
+Version
+----------
+Quay is currently on version: `0.4.0`
+
+You can check the version at any time using the `Quay.VERSION` object. `Quay.VERSION.FULL()` will return the full version and `Quay.VERSION.[MAJOR/MINOR/PATCH]` is set to each value respectively.
+
+
+Quay uses [Semantic Versioning](http://semver.org/)
+
 License
 -----------
 Please see LICENSE.md

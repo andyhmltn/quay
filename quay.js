@@ -40,6 +40,15 @@
 
 		this.press = function(key_bindings) { this.bindings = key_bindings; };
 
+		this.VERSION = {
+			MAJOR:0,
+			MINOR:4,
+			PATCH:0,
+			FULL :function() {
+				return this.MAJOR+'.'+this.MINOR+'.'+this.PATCH;
+			}
+		};
+
 		window.onkeydown = function(e) {
 			_self.run(e);
 
