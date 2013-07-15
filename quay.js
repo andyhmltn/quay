@@ -41,8 +41,8 @@
 		this.press = function(key_bindings) { this.bindings = key_bindings; };
 
 		this.VERSION = {
-			MAJOR:0,
-			MINOR:4,
+			MAJOR:1,
+			MINOR:0,
 			PATCH:0,
 			FULL :function() {
 				return this.MAJOR+'.'+this.MINOR+'.'+this.PATCH;
@@ -57,7 +57,7 @@
 
 			if (contains(Object.keys(_self.bindings),currently_pressing))
 			{
-				_self.bindings[currently_pressing]();
+				_self.bindings[currently_pressing](currently_pressing);
 			}
 		};
 
