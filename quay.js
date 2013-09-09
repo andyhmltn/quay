@@ -10,6 +10,8 @@
 				}
 			};
 
+		this.bindings = {};
+
 		var pressing = [],
 			special_keys = {
 				8: "backspace", 9: "tab", 10: "return", 13: "return", 16: "shift", 17: "ctrl", 18: "alt", 19: "pause",
@@ -38,7 +40,16 @@
 			pressing.sort();
 		};
 
-		this.press = function(key_bindings) { this.bindings = key_bindings; };
+		this.press = function(key_bindings) {
+
+			var keys = Object.keys(key_bindings);
+
+			for(var i=0; i<keys.length; i++) {
+				var sorted = keys[i].split('_').sort().join('_');
+
+				this.bindings[sorted] = key_bindings[keys[i]];
+			}
+		};
 
 		this.VERSION = {
 			MAJOR:1,
