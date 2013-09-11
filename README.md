@@ -1,8 +1,6 @@
 Quay: Super Simple key binding
 =========
 
-**Please note: This is an MVP! Not all features may work correctly**
-
 Quay is a super simple script that allows you to easily bind key shortcuts to functions using javascript. For instance, say you had this function:
 
 	var say_hello = function() {
