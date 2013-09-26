@@ -60,7 +60,7 @@
 			}
 		};
 
-		window.onkeydown = function(e) {
+		this.keydown = function(e) {
 			_self.run(e);
 
 			var sorted_pressing    = pressing.sort();
@@ -72,7 +72,7 @@
 			}
 		};
 
-		window.onkeyup = function(e) {
+		this.keyup = function(e) {
 			remove(pressing,_self.convert(e.which));
 		};
 	};
@@ -80,4 +80,6 @@
 
 
 	window.Quay = new Quay();
+	window.onkeydown = window.Quay.keydown;
+	window.onkeyup   = window.Quay.keyup;
 })();
