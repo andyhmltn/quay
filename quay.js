@@ -1,16 +1,24 @@
 (function(){
 	var Quay = function() {
-		var _self = this;
+		var _self = this
 
 		/*Utility Functions*/
-		var contains = function(a, obj) {var i = a.length;while (i--) {if (a[i] === obj) {return true;}}return false;},
+		var contains = function(a, obj) {
+			var i = a.length
+			while(i--) {
+				if (a[i] === obj) {
+					return true
+				}
+			}
+			return false
+		},
 			remove = function(a, x) {
 				if (contains(a,x)) {
-					a.splice(a.indexOf(x),1 );
+					a.splice(a.indexOf(x),1 )
 				}
-			};
+			}
 
-		this.bindings = {};
+		this.bindings = {}
 
 		var pressing = [],
 			special_keys = {
@@ -20,66 +28,66 @@
 				96: "0", 97: "1", 98: "2", 99: "3", 100: "4", 101: "5", 102: "6", 103: "7",
 				104: "8", 105: "9", 106: "*", 107: "+", 109: "-", 110: ".", 111 : "/",
 				112: "f1", 113: "f2", 114: "f3", 115: "f4", 116: "f5", 117: "f6", 118: "f7", 119: "f8",
-				120: "f9", 121: "f10", 122: "f11", 123: "f12", 144: "numlock", 145: "scroll", 186: ";", 191: "/",
+				120: "f9", 121: "f10", 122: "f11", 123: "f12", 144: "numlock", 145: "scroll", 186: "", 191: "/",
 				220: "\\", 222: "'", 224: "meta"
-			};
+			}
 
 		this.convert = function(key) {
 
 			if (contains(Object.keys(special_keys),String(key)))
 			{
-				return special_keys[key];
+				return special_keys[key]
 			} else {
-				return String.fromCharCode(key).toLowerCase();
+				return String.fromCharCode(key).toLowerCase()
 			}
-		};
+		}
 		this.run = function(key) {
-			var string = this.convert(key.which);
-			pressing.push(string);
+			var string = this.convert(key.which)
+			pressing.push(string)
 
-			pressing.sort();
-		};
+			pressing.sort()
+		}
 
 		this.press = function(key_bindings) {
 
-			var keys = Object.keys(key_bindings);
+			var keys = Object.keys(key_bindings)
 
 			for(var i=0; i<keys.length; i++) {
-				var sorted = keys[i].split('_').sort().join('_');
+				var sorted = keys[i].split('_').sort().join('_')
 
-				this.bindings[sorted] = key_bindings[keys[i]];
+				this.bindings[sorted] = key_bindings[keys[i]]
 			}
-		};
+		}
 
 		this.VERSION = {
 			MAJOR:1,
 			MINOR:0,
 			PATCH:0,
 			FULL :function() {
-				return this.MAJOR+'.'+this.MINOR+'.'+this.PATCH;
+				return this.MAJOR+'.'+this.MINOR+'.'+this.PATCH
 			}
-		};
+		}
 
 		this.keydown = function(e) {
-			_self.run(e);
+			_self.run(e)
 
-			var sorted_pressing    = pressing.sort();
-			var currently_pressing = sorted_pressing.join('_');
+			var sorted_pressing    = pressing.sort()
+			var currently_pressing = sorted_pressing.join('_')
 
 			if (contains(Object.keys(_self.bindings),currently_pressing))
 			{
-				_self.bindings[currently_pressing](currently_pressing);
+				_self.bindings[currently_pressing](currently_pressing)
 			}
-		};
+		}
 
 		this.keyup = function(e) {
-			remove(pressing,_self.convert(e.which));
-		};
-	};
+			remove(pressing,_self.convert(e.which))
+		}
+	}
 
 
 
-	window.Quay = new Quay();
-	window.onkeydown = window.Quay.keydown;
-	window.onkeyup   = window.Quay.keyup;
-})();
+	window.Quay = new Quay()
+	window.onkeydown = window.Quay.keydown
+	window.onkeyup   = window.Quay.keyup
+})()
