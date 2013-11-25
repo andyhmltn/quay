@@ -77,6 +77,8 @@
 			if (contains(Object.keys(_self.bindings),currently_pressing))
 			{
 				_self.bindings[currently_pressing](currently_pressing)
+
+				pressing = []
 			}
 		}
 
