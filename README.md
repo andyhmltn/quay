@@ -9,11 +9,13 @@ Quay is a super simple script that allows you to easily bind key shortcuts to fu
 
 You may want that function to run when a key combination is pressed on your page. Just include Quay and add the following:
 
-	Quay.press({
+    var q = new Quay(window);
+
+	q.press({
 		'ctrl_alt_a':say_hello
 	});
 
-And voila! Now that function will be run whenever the user presses CTRL+ALT+A on that page.
+And voila! Now that function will be run whenever the user presses CTRL+ALT+A on that page. Notice how `Quay` takes a single argument. This is the element you want to listen for key presses on. In this case a global `window` will suffice.
 
 **Please note:** The current key combination (so above would be `ctrl_alt_a`) is passed as the first argument into the callback (in this case `say_hello`)
 
