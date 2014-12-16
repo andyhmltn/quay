@@ -59,9 +59,9 @@ var Quay = function($el) {
 	}
 
 	this.VERSION = {
-		MAJOR:1,
+		MAJOR:2,
 		MINOR:0,
-		PATCH:2,
+		PATCH:0,
 		FULL :function() {
 			return this.MAJOR+'.'+this.MINOR+'.'+this.PATCH
 		}
