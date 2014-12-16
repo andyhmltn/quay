@@ -1,4 +1,4 @@
-var Quay = function() {
+var Quay = function($el) {
 	var _self = this
 
 	/*Utility Functions*/
@@ -84,12 +84,19 @@ var Quay = function() {
 	this.keyup = function(e) {
 		remove(pressing,_self.convert(e.which))
 	}
+
+	this.bindTo = function($el) {
+		$el.addEventListener('keydown', this.keydown);
+		$el.addEventListener('keyup', this.keyup);
+	}
+
+	if(typeof $el !== 'undefined') {
+		this.bindTo($el);
+	}
 }
 
 if ( typeof define == "function" && define.amd) {
-	define([], function() { return Quay; })
+	define([], function() {
+		return Quay;
+	})
 }
-
-window.Quay = new Quay()
-window.onkeydown = window.Quay.keydown
-window.onkeyup   = window.Quay.keyup
