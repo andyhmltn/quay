@@ -19,7 +19,7 @@ And voila! Now that function will be run whenever the user presses CTRL+ALT+A on
 
 Version
 ----------
-Quay is currently on version: `1.0.1`
+Quay is currently on version: `1.0.2`
 
 You can check the version at any time using the `Quay.VERSION` object. `Quay.VERSION.FULL()` will return the full version and `Quay.VERSION.[MAJOR/MINOR/PATCH]` is set to each value respectively.
 
