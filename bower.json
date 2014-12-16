@@ -1,0 +1,22 @@
+{
+  "name": "quay",
+  "main": "quay.js",
+  "version": "1.0.1",
+  "homepage": "https://github.com/andyhmltn/quay",
+  "authors": [
+    "Andy Hamilton <andyhmltn@gmail.com>"
+  ],
+  "description": "Super simple key binding for javascript",
+  "keywords": [
+    "key",
+    "binding"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
