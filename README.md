@@ -17,7 +17,7 @@ You may want that function to run when a key combination is pressed on your page
 
 And voila! Now that function will be run whenever the user presses CTRL+ALT+A on that page. Notice how `Quay` takes a single argument. This is the element you want to listen for key presses on. In this case a global `window` will suffice.
 
-**Please note:** The current key combination (so above would be `ctrl_alt_a`) is passed as the first argument into the callback (in this case `say_hello`)
+**Please note:** The current key combination (so above would be `ctrl_alt_a`) is passed as the first argument into the callback (in this case `say_hello`.) The event that triggered it is also passed in as a second argument
 
 You can also use multiple key combinations for the same callback. For example:
 
