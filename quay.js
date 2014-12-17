@@ -65,7 +65,7 @@ var Quay = function($el) {
 
 	this.VERSION = {
 		MAJOR:2,
-		MINOR:0,
+		MINOR:1,
 		PATCH:0,
 		FULL :function() {
 			return this.MAJOR+'.'+this.MINOR+'.'+this.PATCH
@@ -80,7 +80,7 @@ var Quay = function($el) {
 
 		if (contains(Object.keys(_self.bindings),currently_pressing))
 		{
-			_self.bindings[currently_pressing](currently_pressing)
+			_self.bindings[currently_pressing](currently_pressing, e)
 
 			pressing = []
 		}
