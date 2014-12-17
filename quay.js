@@ -52,9 +52,14 @@ var Quay = function($el) {
 		var keys = Object.keys(key_bindings)
 
 		for(var i=0; i<keys.length; i++) {
-			var sorted = keys[i].split('_').sort().join('_')
+			var key = keys[i],
+				keys_split = key.split(',');
 
-			this.bindings[sorted] = key_bindings[keys[i]]
+			for(var k=0; k<keys_split.length; k++) {
+				var sorted = keys_split[k].split('_').sort().join('_')
+
+				this.bindings[sorted] = key_bindings[keys[i]]
+			}
 		}
 	}
 
