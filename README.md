@@ -19,6 +19,16 @@ And voila! Now that function will be run whenever the user presses CTRL+ALT+A on
 
 **Please note:** The current key combination (so above would be `ctrl_alt_a`) is passed as the first argument into the callback (in this case `say_hello`)
 
+You can also use multiple key combinations for the same callback. For example:
+
+    var q = new Quay(window);
+
+    q.press({
+        'up,down,left,right': function(key) {
+            alert('You pressed the ' + key + ' arrow!');
+        }
+    })
+
 Version
 ----------
 Quay is currently on version: `2.0.0`
