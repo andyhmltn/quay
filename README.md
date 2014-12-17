@@ -11,7 +11,7 @@ You may want that function to run when a key combination is pressed on your page
 
     var q = new Quay(window);
 
-	q.press({
+	q.capture({
 		'ctrl_alt_a':say_hello
 	});
 
@@ -23,7 +23,7 @@ You can also use multiple key combinations for the same callback. For example:
 
     var q = new Quay(window);
 
-    q.press({
+    q.capture({
         'up,down,left,right': function(key) {
             alert('You pressed the ' + key + ' arrow!');
         }

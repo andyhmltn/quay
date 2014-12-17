@@ -47,7 +47,7 @@ var Quay = function($el) {
 		pressing.sort()
 	}
 
-	this.press = function(key_bindings) {
+	this.capture = function(key_bindings) {
 
 		var keys = Object.keys(key_bindings)
 
