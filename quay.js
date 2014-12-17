@@ -11,11 +11,11 @@ var Quay = function($el) {
 		}
 		return false
 	},
-		remove = function(a, x) {
-			if (contains(a,x)) {
-				a.splice(a.indexOf(x),1 )
-			}
+	remove = function(a, x) {
+		if (contains(a,x)) {
+			a.splice(a.indexOf(x),1 )
 		}
+	}
 
 	this.bindings = {}
 
