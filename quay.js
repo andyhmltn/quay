@@ -44,7 +44,6 @@ var Quay = function($el) {
 		var string = this.convert(key.which)
 		pressing.push(string)
 
-		pressing.sort()
 	}
 
 	this.capture = function(key_bindings) {
