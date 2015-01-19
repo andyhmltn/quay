@@ -66,7 +66,7 @@ var Quay = function($el) {
 	this.VERSION = {
 		MAJOR:2,
 		MINOR:1,
-		PATCH:0,
+		PATCH:1,
 		FULL :function() {
 			return this.MAJOR+'.'+this.MINOR+'.'+this.PATCH
 		}
