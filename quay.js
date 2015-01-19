@@ -10,11 +10,6 @@ var Quay = function($el) {
 			}
 		}
 		return false
-	},
-	remove = function(a, x) {
-		if (contains(a,x)) {
-			a.splice(a.indexOf(x),1 )
-		}
 	}
 
 	this.bindings = {}
@@ -28,7 +23,7 @@ var Quay = function($el) {
 			104: "8", 105: "9", 106: "*", 107: "+", 109: "-", 110: ".", 111 : "/",
 			112: "f1", 113: "f2", 114: "f3", 115: "f4", 116: "f5", 117: "f6", 118: "f7", 119: "f8",
 			120: "f9", 121: "f10", 122: "f11", 123: "f12", 144: "numlock", 145: "scroll", 186: "", 191: "/",
-			220: "\\", 222: "'", 224: "meta"
+			220: "\\", 222: "'", 224: "cmd", 17: "cmd", 93: "cmd"
 		}
 
 	this.convert = function(key) {
@@ -42,7 +37,10 @@ var Quay = function($el) {
 	}
 	this.run = function(key) {
 		var string = this.convert(key.which)
-		pressing.push(string)
+
+		if(! contains(string, pressing)) {
+			pressing.push(string)
+		}
 
 		pressing.sort()
 	}
@@ -66,7 +64,7 @@ var Quay = function($el) {
 	this.VERSION = {
 		MAJOR:2,
 		MINOR:1,
-		PATCH:1,
+		PATCH:2,
 		FULL :function() {
 			return this.MAJOR+'.'+this.MINOR+'.'+this.PATCH
 		}
@@ -87,7 +85,22 @@ var Quay = function($el) {
 	}
 
 	this.keyup = function(e) {
-		remove(pressing,_self.convert(e.which))
+		var key_string = _self.convert(e.which);
+
+		pressing = pressing.filter(function(value) {
+			return value !== key_string;
+		})
+
+		// The command key behaves extremely
+		// weirdly. It will cause the browser to
+		// 'forget' other keys are depressed and
+		// so the only way to deal with that is a
+		// hack to clear the keys pressed when cmd is
+		// released. Maybe not a correct assumption but
+		// it's better than breaking everything
+		if(key_string == "cmd") {
+			pressing = [];
+		}
 	}
 
 	this.bindTo = function($el) {
