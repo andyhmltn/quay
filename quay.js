@@ -50,7 +50,7 @@ Quay.prototype.keyup = function(e) {
 	// array filter method so Quay.utils
 	// provides a (rather rough) fallback
 
-	var result = (false) ?
+	var result = (this.pressing.filter) ?
 					this.pressing.filter(filterCallback) :
 					Quay.utils.filter(this.pressing, filterCallback);
 
