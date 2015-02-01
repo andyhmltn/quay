@@ -134,7 +134,7 @@ Quay.prototype.convert = function(key) {
 // TODO: Automagic gulp versioning :)
 Quay.VERSION = {
 	MAJOR: 2,
-	MINOR: 1,
+	MINOR: 2,
 	PATCH: 2,
 	FULL: function() {
 		return [this.MAJOR, this.MINOR, this.PATCH].join('.')
