@@ -15,7 +15,7 @@ var Quay = function($el) {
 	};
 
 	if($el) {
-		this.bindTo($el);
+		self.bindTo($el);
 	}
 }
 
@@ -86,7 +86,7 @@ Quay.utils = {
 		var result = [];
 
 		for(var i=0; i<haystack.length; i++) {
-			var testedValue = callback.apply(null, [ haystack[i] ])
+			var testedValue = callback.apply(null, [ haystack[i] ]);
 
 			if(testedValue) {
 				result.push(haystack[i]);
@@ -137,7 +137,7 @@ Quay.VERSION = {
 	MINOR: 2,
 	PATCH: 2,
 	FULL: function() {
-		return [this.MAJOR, this.MINOR, this.PATCH].join('.')
+		return [this.MAJOR, this.MINOR, this.PATCH].join('.');
 	}
 }
 
