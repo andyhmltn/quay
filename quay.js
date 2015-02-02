@@ -34,8 +34,6 @@ Quay.prototype.keydown = function(e) {
 
 	if(Quay.utils.contains(Object.keys(this.bindings), currently_pressing)) {
 		this.bindings[currently_pressing].apply(this, [currently_pressing, e]);
-
-		this.pressing = [];
 	}
 }
 
