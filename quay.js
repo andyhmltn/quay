@@ -77,8 +77,8 @@ Quay.prototype.bindTo = function(element) {
 
 	var instance = this;
 
-	element.addEventListener('keydown', function(e) { instance.keydown.apply(instance, [e]) });
-	element.addEventListener('keyup', function(e) { instance.keyup.apply(instance, [e]) });
+	element.addEventListener('keydown', function(e) { instance.keydown.call(instance, e) });
+	element.addEventListener('keyup', function(e) { instance.keyup.call(instance, e) });
 }
 
 Quay.prototype.capture = function(key_bindings) {
