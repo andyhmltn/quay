@@ -49,7 +49,6 @@ Quay.prototype.keyup = function(e) {
 	// <IE9 doesn't support the
 	// array filter method so Quay.utils
 	// provides a (rather rough) fallback
-
 	var result = (this.pressing.filter) ?
 					this.pressing.filter(filterCallback) :
 					Quay.utils.filter(this.pressing, filterCallback);
@@ -74,7 +73,6 @@ Quay.prototype.bindTo = function(element) {
 	// functions (without function.prototype.bind)
 	// but it seem silly to drop <IE8 support for
 	// something like this
-
 	var instance = this;
 
 	element.addEventListener('keydown', function(e) { instance.keydown.call(instance, e) });
