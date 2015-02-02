@@ -31,7 +31,7 @@ You can also use multiple key combinations for the same callback. For example:
 
 Version
 ----------
-Quay is currently on version: `2.2.2`
+Quay is currently on version: `2.2.3`
 
 You can check the version at any time using the `Quay.VERSION` object. `Quay.VERSION.FULL()` will return the full version and `Quay.VERSION.[MAJOR/MINOR/PATCH]` is set to each value respectively.
 
