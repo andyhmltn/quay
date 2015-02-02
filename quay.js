@@ -81,6 +81,29 @@ Quay.prototype.bindTo = function(element) {
 	element.addEventListener('keyup', function(e) { instance.keyup.apply(instance, [e]) });
 }
 
+Quay.prototype.capture = function(key_bindings) {
+	var keys = Object.keys(key_bindings);
+
+	for(var i=0; i<keys.length; i++) {
+		var keys_split = keys[i].split(',');
+
+		for(var k=0; k< keys_split.length; k++) {
+			var sorted = keys_split[k].split('_').sort().join('_');
+
+			this.bindings[sorted] = key_bindings[keys[i]];
+		}
+
+	}
+}
+
+Quay.prototype.convert = function(key) {
+	if(Quay.utils.contains(Object.keys(this.special_keys), String(key))) {
+		return this.special_keys[key];
+	}
+
+	return String.fromCharCode(key).toLowerCase();
+}
+
 Quay.utils = {
 	filter: function(haystack, callback) {
 		var result = [];
@@ -105,29 +128,6 @@ Quay.utils = {
 
 		return false;
 	}
-}
-
-Quay.prototype.capture = function(key_bindings) {
-	var keys = Object.keys(key_bindings);
-
-	for(var i=0; i<keys.length; i++) {
-		var keys_split = keys[i].split(',');
-
-		for(var k=0; k< keys_split.length; k++) {
-			var sorted = keys_split[k].split('_').sort().join('_');
-
-			this.bindings[sorted] = key_bindings[keys[i]];
-		}
-
-	}
-}
-
-Quay.prototype.convert = function(key) {
-	if(Quay.utils.contains(Object.keys(this.special_keys), String(key))) {
-		return this.special_keys[key];
-	}
-
-	return String.fromCharCode(key).toLowerCase();
 }
 
 // Quay Versioning
