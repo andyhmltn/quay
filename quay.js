@@ -146,8 +146,8 @@
 	// TODO: Automagic gulp versioning :)
 	Quay.VERSION = {
 		MAJOR: 2,
-		MINOR: 2,
-		PATCH: 3,
+		MINOR: 3,
+		PATCH: 0,
 		FULL: function() {
 			return [this.MAJOR, this.MINOR, this.PATCH].join('.');
 		}
