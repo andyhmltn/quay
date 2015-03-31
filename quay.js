@@ -87,11 +87,16 @@
 		// functions (without function.prototype.bind)
 		// but it seem silly to drop <IE8 support for
 		// something like this
-		var instance = this;
+		var instance = this,
+			keydown = function(e) { instance.keydown.call(instance, e) },
+			keyup = function(e) { instance.keyup.call(instance, e) };
 
 		if(element.addEventListener) {
-			element.addEventListener('keydown', function(e) { instance.keydown.call(instance, e) });
-			element.addEventListener('keyup', function(e) { instance.keyup.call(instance, e) });
+			element.addEventListener('keydown', keydown);
+			element.addEventListener('keyup', keyup);
+		} else {
+			element.attachEvent("onkeydown", keydown);
+			element.attachEvent("onkeyup", keyup);
 		}
 	}
 
@@ -149,7 +154,7 @@
 	Quay.VERSION = {
 		MAJOR: 2,
 		MINOR: 3,
-		PATCH: 1,
+		PATCH: 2,
 		FULL: function() {
 			return [this.MAJOR, this.MINOR, this.PATCH].join('.');
 		}

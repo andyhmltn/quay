@@ -1,7 +1,7 @@
 {
   "name": "quay",
   "main": "quay.js",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "homepage": "https://github.com/andyhmltn/quay",
   "authors": [
     "Andy Hamilton <andyhmltn@gmail.com>"
