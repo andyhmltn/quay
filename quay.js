@@ -149,7 +149,7 @@
 	Quay.VERSION = {
 		MAJOR: 2,
 		MINOR: 3,
-		PATCH: 0,
+		PATCH: 1,
 		FULL: function() {
 			return [this.MAJOR, this.MINOR, this.PATCH].join('.');
 		}
