@@ -89,8 +89,10 @@
 		// something like this
 		var instance = this;
 
-		element.addEventListener('keydown', function(e) { instance.keydown.call(instance, e) });
-		element.addEventListener('keyup', function(e) { instance.keyup.call(instance, e) });
+		if(element.addEventListener) {
+			element.addEventListener('keydown', function(e) { instance.keydown.call(instance, e) });
+			element.addEventListener('keyup', function(e) { instance.keyup.call(instance, e) });
+		}
 	}
 
 	Quay.prototype.capture = function(key_bindings) {
