@@ -1,0 +1,23 @@
+{
+  "name": "quay-js",
+  "version": "2.3.2",
+  "description": "Simple key combination handling in the DOM",
+  "main": "quay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyhmltn/quay.git"
+  },
+  "keywords": [
+    "quay",
+    "js"
+  ],
+  "author": "Andy Hamilton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andyhmltn/quay/issues"
+  },
+  "homepage": "https://github.com/andyhmltn/quay#readme"
+}
